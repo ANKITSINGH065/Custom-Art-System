@@ -1,9 +1,7 @@
 import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
-  _id: { type: String, required: true }, // Use custom userId as the _id
-  username: { type: String },
-  password: { type: String },
+  _id: { type: String, required: true }, // use userEmail as _id
   images: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Image' }],
 });
 

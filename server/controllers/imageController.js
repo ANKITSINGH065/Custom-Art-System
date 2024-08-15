@@ -58,7 +58,8 @@ export const uploadImage = async (req, res) => {
 
     // Check if the user exists
     let user = await User.findById(userId);
-    if (!user) {
+    console.log("user", user)
+    if (user === null) {
       // If the user doesn't exist, create a new user
       user = new User({ _id: userId, images: [savedImage._id] });
       
@@ -80,6 +81,7 @@ export const uploadImage = async (req, res) => {
       .json({ error: error.message || "Error in payment capture process" });
   }
 };
+
 
 export const getUserImages = async (req, res) => {
   try {

@@ -87,7 +87,7 @@ const Customizer = ({ setShowKonva }) => {
 
   const handlePayment = async () => {
     console.log("Buy Now button clicked");
-    const amount = 500; // Store amount in a variable for consistency
+    const amount = 199; // Store amount in a variable for consistency
 
     try {
       // 1. Fetch Razorpay key from backend
@@ -162,7 +162,7 @@ const Customizer = ({ setShowKonva }) => {
               {
                 amount,
                 image: image,
-                userId: user.id,
+                userId: user.primaryEmailAddress.emailAddress,
               },
               {
                 maxContentLength: Infinity,
@@ -381,7 +381,7 @@ const Customizer = ({ setShowKonva }) => {
           >
             <CustomButton
               type="filled"
-              title="Open Konva"
+              title="Open Editor"
               handleClick={() => setShowKonva(true)}
               customStyles="w-fit px-4 py-2.5 font-bold text-sm"
             />

@@ -16,7 +16,7 @@ const Dashboard = () => {
       const fetchImages = async () => {
         try {
           const response = await axios.get('http://localhost:8080/api/capture/user/images', {
-            params: { userId: user.id }, // Sending userId as a query parameter
+            params: { userId: user.primaryEmailAddress.emailAddress }, // Sending userId as a query parameter
           });
           
           setImages(response.data);
